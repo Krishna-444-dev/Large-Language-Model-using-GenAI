@@ -1,0 +1,17 @@
+Dear Hiring Manager,
+
+I am writing to express my interest in the position that you have advertised. As a highly skilled and motivated individual with a strong background in Computer Information Systems and Big Data Analytics, I am confident that I would make a valuable addition to your team.
+
+Currently, I am pursuing my Master's degree in Computer Information Systems with a focus on Big Data Analytics at Georgia State University. As a Graduate Research Assistant, I have been part of a large research group that is contributing to the advancement of cybersecurity. My responsibilities include retrieving and processing data from the Dark Web to prevent people from getting scammed in various illegal activities. Additionally, I am developing an automated process to collect and process data from the Deep and Dark Web.
+
+Before joining Georgia State University, I worked as a Software Implementation Engineer at Tango Analytics in Bangalore, India. In this role, I designed and implemented an ERP-based software to help five big enterprises manage complicated leasing system data. I also developed a module on the Oracle Application Development Platform to show real-time bidding data. Furthermore, I managed three virtualization software using Azure Infrastructure and was involved in network diagnosis on a regular basis. I had the opportunity to interact with five clients regularly to understand their needs and make particular modules more client-specific.
+
+During my time as a Software Engineer at Accops Systems Pvt. Ltd. in Pune, India, I designed full end-to-end virtualization applications using C#, JavaScript, SQL, and CSS. I built two Windows services and four WPF forms embedded in virtualization software. I also took the lead and launched a reporting tool to get more insights on virtual machines average usage on ELK Stack. I had the opportunity to visit up to six client locations, ranging from the Indian Space Research Organisation to Mercedes Benz, to understand and build client-specific applications.
+
+I am proficient in various programming languages, including Python, JavaScript, PL SQL, C#, C++, C, R, CSS, and HTML. Additionally, I have cross-functional capabilities in VMWare, Machine Learning, Azure, Virtualization, and Data Visualization. I have worked on several projects, including Telecom Churn Prediction using ML Python, ML Algorithms, Neural Network, Ensemble Models, and Braille Spark Python, BeagleBone Black, Embedded C, Fedora, VHDL, among others. I am also certified in C# for Professionals, MVC, Embedded Design, PLC & SCADA, among others.
+
+I am excited about the opportunity to bring my skills and experience to your organization. Thank you for considering my application. I look forward to the opportunity to discuss how I can contribute to your team.
+
+Sincerely,
+
+Annapareddy Krishna Reddy

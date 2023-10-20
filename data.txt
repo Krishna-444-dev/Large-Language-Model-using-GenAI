@@ -1,0 +1,85 @@
+Annapareddy Krishna Reddy
+Atlanta · Krishnareddy1996ss@gmail.com · 4709576044 ·
+https://www.linkedin.com/in/krishna-reddy-739805133/
+Education
+Georgia State University, J.Mack Robinson College of Business Atlanta, GA
+MS in Computer Information Systems in Big Data Analytics GPA: 4.0 Jan 2023 - Dec 2023
+Army Institute of Technology Pune, India
+BE in Electronics and Communications Engineering GPA: 3.2 July 2014 - July 2018
+Work Experience
+Georgia State University (EBCS) Atlanta
+Graduate Research Assistant January 2023 - Present
+• Part of a large research group with more than 35 universities contributing in the advancement of
+Machine Learning and Cybersecurity
+• Using Data Analytics to develop meaningful visualizations from the data exrtracted from web with
+Python and Tableau.
+• Retrieving and processing the data from Dark Web to prevent people from getting scammed in variuos
+illegal activities.
+• Developing an automated process to collect and process data from Deep and Dark Web.
+Tango Analytics Bangalore, India
+Software Implementation Engineer April 2021 - December 2022
+• Devised and implemented ERP based software to help 5 Big enterprises manage complicated Leasing
+System Data.
+• Developed an module on Oracle Application Development Framework to show the Real time bidding
+data.
+• Managed 3 Virtualization softwares using Azure Infrastructure and was involved in Network Diagnosis
+on a regular basis.
+• Interacted with 5 clients on a regular basis to understand actual needs and make particular module
+more client specific.
+Self Employed(Tutor) Hyderabad, India
+Self Employed(Tutor) February 2020 - March 2021
+• Took 1 year break from work to prepare for PhD Entrance (For CSIR JRF in Mathematics).
+• Completed 4 Mathematics courses including Linear & Vector Algebra, Probability and Statistics, ODE
+& PDE and Real Analysis from NPTEL (Government Portal).
+• Tutored 8 young children in Maths, including students in High School.
+• Volunteered for an NGO and took Math classes on weekends for needful Children.
+Accops Systems Pvt LTD Pune, India
+Software Engineer June 2018 - January 2020
+• Designed full end to end Virtualization applications using C#, Javascript, SQL and CSS.
+• Built 2 Windows services and 4 WPF forms embedded in a Virtualization software.
+• Took a lead and launched a Reporting tool to get more insights on Virtual Machines average usage on
+ELK Stack.
+• Visited upto 6 client locations ranging from Indian Space Research Organisation to Mercedes Benz, to
+understand and build client specific applications.
+Skills
+Programming Languages: Python, Javascript, PL SQL, C#, C++, C, R, CSS, HTML, PySpark
+Cross Functional Capabilities: Machine Learning, Artificial Intelligence, VMWare, MS SQL, Hadoop
+Tools Hands-On: Tableau, Microsoft Azure, Amazon AWS, GCP, Databricks, Power BI
+Concepts & Algorithms: MVC, Data Structures, Bootstrap, Data Visualization, Cloud Engineering
+Technologies: Big Data Analytics, Virtualization, Windows Administration, ERP Systems
+Projects & Certifications
+Popularity prediction of Posts and Questions on Stack Exchange using R and Python with ML
+Python, R, ML Algorithms, Tensorflow, Keras, Neural Network, Word Cloud
+Utilized R and Python with machine learning techniques to predict the popularity of posts and questions on
+Stack Exchange. Developed models that analyzed content, user engagement, and community interactions to
+estimate potential popularity. Applied data analysis skills and leveraged the power of machine learning
+libraries to optimize content strategy and increase user engagement. Contributed to the vitality and growth of
+the Stack Exchange platform by providing insights and recommendations based on predictive analysis.
+Telecom Churn Prediction using ML Python, ML Algorithms, Neural Network, Ensemble Models,
+SMOTE ENN
+Built an Telecom customer churn prediction model using different Machine Learning Algorithms and Neural
+network. Achieved an Accuracy of more than 94%. Applied advanced Algorithms like SMOTE ENN for
+upsampling the data and getting more suitable and accurate results.
+Braille Spark Python, BeagleBone Black, Embedded C, Fedora, VHDL
+https://github.com/users/Krishna-444-dev/projects/1
+BRAILLE SPARK is a Reprogrammable and Refreshable Braille script mechanism created by us, involving
+Servo motors and Beagle Bone Black, having a version of linux and is programmed on Python. A cheap and
+affordable alternative for the Visually Impaired to read books and other kinds of digital documents on
+internet.
+Certified Scrum Master (CSM) Agile Methodology, Scrum, SDLC
+Scrum Alliance
+C# for Professionals C#, MVC
+Microsoft Virtual Academy
+Embedded Design Embedded C
+Texas Instruments
+PLC & SCADA PLC, SCADA
+Allen Bradley
+Awards
+Star Performer of the Year Tango Analytics
+The award was given as a recognition of outstanding performance spanning more than a year. May 2022
+Best short term Impact created Accops Systems Pvt LTD
+The award was given after building detailed client specific softwares and receiving various appreciations from
+national and international companies December 2019
+Certificate of Merit COEP's Bhau Institute of Innovation, Entrepreneurship and Leadership
+Received 7th prize in All India open Innovation challenge conducted by BHAU a Central government
+organization for project called Braille Spark. October 2017

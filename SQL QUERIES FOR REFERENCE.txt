@@ -1,0 +1,322 @@
+-- USE sql_store;
+
+-- SELECT * FROM customers
+-- WHERE customer_id = 1
+-- ORDER BY first_name;
+
+-- SELECT first_name, 
+-- last_name, 
+-- points, 
+-- (points +10) *100 AS "discount factor"
+-- FROM customers;
+
+-- SELECT * FROM products;
+-- SELECT name, unit_price,
+-- unit_price*1.1 AS 'new price'
+-- FROM products;
+
+-- SELECT * FROM customers
+-- WHERE points > 3000;
+-- WHERE state != 'VA';
+-- WHERE birth_date < '1990-01-01';
+
+-- Get the orders placed in 2019
+-- SELECT * FROM orders
+-- WHERE order_date >= '2019-01-01';
+
+-- AND, OR, NOT operator
+-- SELECT * FROM customers
+-- WHERE birth_date >'1990-01-01' AND points > 1000;
+-- WHERE birth_date >'1990-01-01' OR points > 1000;
+-- WHERE birth_date >'1990-01-01' OR 
+	-- (points > 1000 AND 
+	 -- state = 'VA');
+-- First priority = AND
+-- Second priority = OR
+-- WHERE NOT (birth_date >'1990-01-01' OR points > 1000);
+
+-- From the order_items table, get the items
+-- for order #6
+-- where the total price is greater than 30
+-- SELECT * FROM order_items
+-- WHERE order_id = 6 AND (unit_price*quantity > 30);
+
+-- IN Operator
+-- SELECT * FROM customers
+-- WHERE state = 'VA' OR state = 'GA' OR state = 'FL';
+-- WHERE state IN ('VA', 'GA', 'FL');
+-- WHERE state NOT IN ('VA', 'GA', 'FL');
+
+-- Return products with 
+-- 		quantity in stock eual to 49,38,72
+-- SELECT * FROM products
+-- WHERE quantity_in_stock IN (49,38,72);
+
+-- BETWEEN Operator
+-- SELECT * FROM customers
+-- WHERE points >= 1000 AND points <= 3000;
+-- WHERE points BETWEEN 1000 AND 3000;
+
+-- Return customers born
+-- 		between 1/1/1990 and 1/1/2000
+-- SELECT * FROM customers 
+-- WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01';
+
+-- LIKE Operator
+-- SELECT * FROM customers
+-- WHERE last_name LIKE 'b%'; -- % indicates any no of characters
+-- WHERE last_name LIKE '%b%';
+-- WHERE last_name LIKE '_____y'; -- _ indicates only a single character
+
+-- Get the customers whose
+-- 		addresses contain TRAIL or AVENUE
+-- 		phone numbers end with 9
+-- SELECT * FROM customers
+-- WHERE address LIKE '%TRAIL%' OR address LIKE '%AVENUE%' OR phone LIKE '%9';
+-- WHERE address LIKE '%TRAIL%' OR address LIKE '%AVENUE%' AND phone LIKE '%9';
+
+-- REGEXP Operator
+-- SELECT * FROM customers
+-- WHERE last_name LIKE '%field%';
+-- WHERE last_name REGEXP 'field';
+-- WHERE last_name REGEXP 'field|mac|rose';
+-- WHERE last_name REGEXP '[gim]e';
+-- WHERE last_name REGEXP '[a-h]e';
+-- ^ indicates the beginning of the string
+-- $ indicates the end of the string
+-- | works as same as OR operator
+-- [] used for combination of letters outside the brackets with the letters inside the brackets
+
+-- Get the customers whose
+-- 		first names are ELKA or AMBUR
+-- 		last names end with EY or ON
+-- 		last names start with MY or conatains SE
+-- 		last names contain B followed by R or U
+-- SELECT * FROM customers
+-- WHERE first_name REGEXP 'ELKA|AMBUR';
+-- WHERE last_name REGEXP 'EY$|ON$';
+-- WHERE last_name REGEXP '^MY|SE';
+-- WHERE last_name REGEXP 'b[ru]';
+
+-- NULL Operator
+-- SELECT * FROM customers
+-- WHERE phone IS NULL;
+-- WHERE phone IS NOT NULL;
+
+-- Get the orders that are not shipped
+-- SELECT * FROM orders
+-- WHERE shipper_id IS NULL OR shipped_date IS NULL;
+
+-- ORDER BY Clause
+-- SELECT * FROM customers
+-- ORDER BY first_name;
+-- ORDER BY first_name DESC;
+-- ORDER BY state, first_name;
+-- SELECT first_name, last_name, 10 AS points
+-- FROM customers
+-- ORDER BY points, first_name;
+-- ORDER BY 1,2; --  1,2 indicates to the columns first_name and last_name
+
+-- LIMIT Clause
+-- SELECT * FROM customers
+-- LIMIT 3; -- Returns only 3 records
+-- LIMIT 300; -- Returns all the records as there are less than 300 records
+-- LIMIT 6, 3; -- Here 6 indicates the offset (to skip these records) and 3 indicates to then pick 3 records
+
+-- Get the top 3 loyal customers (With highest no of points)
+-- SELECT * FROM customers
+-- ORDER BY points DESC
+-- LIMIT 3;
+
+--  Inner Joins
+-- Combining data from the two tables using JOIN 
+-- SELECT * FROM orders
+-- SELECT order_id, first_name, last_name
+-- SELECT order_id, o.customer_id, first_name, last_name 
+-- FROM orders o -- Here 'o' indicates the Alias given to the orders table
+-- INNER JOIN customers c -- Here 'c' indicates the Alias given to the customers table
+		-- ON orders.customer_id = customers.customer_id;
+--        ON o.customer_id = c.customer_id;
+
+-- Joining Products table with Order_items table
+-- SELECT * FROM order_items o_i
+-- JOIN products p
+		-- ON o_i.product_id = p.product_id;
+        
+-- Joining across databases
+-- SELECT * 
+-- FROM order_items o_i
+-- JOIN sql_inventory.products p
+-- 	ON o_i.product_id = p.product_id;
+
+-- Self JOINs
+-- Writing query to get the details of the Manager of the employees
+-- USE sql_hr;
+-- SELECT *
+-- SELECT e.employee_id, e.first_name, m.first_name AS Manager
+-- FROM employees e
+-- JOIN employees m
+	-- ON e.reports_to = m.employee_id;
+
+-- Joining Multiple Tables
+-- Displaying details of the customers who placed orders along with their statuses
+-- USE sql_store;
+-- SELECT o.order_id, o.order_date, c.first_name, c.last_name, o_s.name AS status
+-- FROM orders o
+-- JOIN customers c
+-- 	ON c.customer_id = o.customer_id
+-- JOIN order_statuses o_s
+-- 	ON o.status = o_s.order_status_id
+-- ORDER BY o.order_id;
+
+-- Join the tables in sql_invoicing database to get the payment details of the clients
+-- also showing teir invoice details
+-- USE sql_invoicing;
+-- SELECT *
+-- SELECT  pay.payment_id, cli.client_id, pay.invoice_id,
+-- 		pay.date, pay.amount,pay.payment_method,
+-- 		cli.name, cli.city, pay_met.name
+-- FROM payments pay
+-- JOIN clients cli
+-- 	ON pay.client_id = cli.client_id
+-- JOIN payment_methods pay_met
+-- 	ON pay.payment_method = pay_met.payment_method_id;
+
+-- Compund JOIN Conditions
+-- Using the combination of order_id with product_id and joining them with order_item_notes table
+-- SELECT *
+-- FROM order_items oi
+-- JOIN order_item_notes oin
+-- 		ON oi.order_id = oin.order_id
+-- 		AND oi.product_id = oin.product_id
+
+-- OUTER JOIN
+-- SELECT c.customer_id, c.first_name, o.order_id
+-- FROM customers c
+-- JOIN orders o  -- Inner JOIN only returns the records holding the condition in the ON statement
+-- LEFT JOIN orders o  -- OUTER LEFT JOIN returns the records from the left table(first table) irrespective of the condition being true or false
+-- RIGHT JOIN orders o  -- OUTER RIGHT JOIN returns the records from the right table(second table) irrespective of the condition being true or false
+-- 	ON c.customer_id = o.customer_id
+-- ORDER BY c.customer_id;
+
+-- Get the details of order_date, order_id, first_name, shipper and status for a customer placing order
+-- SELECT o.order_date, o.order_id, c.first_name, s.name, o_s.name AS 'status' 
+-- FROM orders o
+-- LEFT JOIN customers c
+-- 		ON o.customer_id = c.customer_id
+-- LEFT JOIN shippers s
+-- 		ON o.shipper_id = s.shipper_id
+-- LEFT JOIN order_statuses o_s
+-- 		ON o.status = o_s.order_status_id
+-- ORDER BY status;
+   
+-- USING Clause
+-- SELECT o.order_id, c.first_name, sh.name
+-- FROM orders o
+-- JOIN customers c
+-- 	ON o.customer_id = c.customer_id;
+-- 	USING(customer_id)
+-- LEFT JOIN shippers sh
+-- 	USING(shipper_id);  -- USING Clause only works when we want to join different tables with same column name
+
+-- NATURAL JOIN
+-- SELECT o.order_id, c.first_name
+-- FROM orders o
+-- NATURAL JOIN customers c;
+-- Here we do not need to specify the common columns the MySQL engine will automatically look for
+-- common columns and join them.
+
+-- UNIONS
+-- Getting the details of the Active and Archived orders from the Orders table based on their Order_date
+-- SELECT order_id, order_date, 'Active' AS status
+-- FROM orders
+-- WHERE order_date >= '2019-01-01'
+-- UNION
+-- SELECT order_id, order_date, 'Archived' AS status
+-- FROM orders
+-- WHERE order_date < '2019-01-01';
+
+-- Get the details of the customers based on their points and classify them in different segments
+-- SELECT customer_id, first_name, points, 'BRONZE' AS type
+-- FROM customers 
+-- WHERE points < '2000'
+-- UNION
+-- SELECT customer_id, first_name, points, 'SILVER' AS type
+-- FROM customers 
+-- WHERE points BETWEEN 2000 AND 3000
+-- UNION
+-- SELECT customer_id, first_name, points, 'GOLD' AS type
+-- FROM customers 
+-- WHERE points > '3000'
+-- ORDER BY first_name;
+
+-- INSERTING a Single Row
+-- INSERT INTO customers
+-- VALUES (DEFAULT, 
+-- 'John', 
+-- 'Smith', 
+ -- NULL,
+ -- '8888888888',
+ -- 'address',
+ -- 'city',
+ -- 'CA',
+-- '2524');
+
+-- INSERTING Multiple Rows
+-- INSERT INTO shippers(name)
+-- VALUES ('Shipper1'),
+-- 		('Shipper2'),
+--         ('Shipper3');
+
+-- INSERTING Hierarchial Rows
+-- INSERT INTO orders (customer_id, order_date, status)
+-- VALUES (1, '2019-01-02', 1);
+
+-- INSERT INTO order_items
+-- VALUES (LAST_INSERT_ID(), 1, 1, 2.95),
+-- 	(LAST_INSERT_ID(), 2, 3, 8.64);
+-- SELECT LAST_INSERT_ID()  -- Inbuilt function in the database engines to get the Last generated ID
+
+-- Creating a copy of a Table
+-- CREATE TABLE orders_archived AS
+-- SELECT * FROM orders  -- Here the SELECT statement works as a subquery for the CREATE TABLE statement
+
+-- INSERT INTO orders_archived
+-- SELECT * FROM orders -- Using the SELECT statement as a Sub query for the INSERT statement
+-- WHERE order_date < '2019-01-01'
+
+-- EXERCISE
+-- CREATE TABLE invoices_archived AS
+-- SELECT 
+-- 	i.invoice_id,
+--     i.number,
+--     c.name AS client,
+--     i.invoice_total,
+--     i.payment_total,
+--     i.invoice_date,
+--     i.payment_date,
+--     i.due_date
+-- FROM invoices i
+-- JOIN clients c
+-- 	USING(client_id)
+--     WHERE payment_date IS NOT NULL;
+
+-- Updating a Single Row
+-- UPDATE invoices 
+-- SET payment_total = 10, payment_date = '2019-03-01'
+-- SET payment_total = DEFAULT, payment_date = NULL
+-- WHERE invoice_id = 1;
+
+/* UPDATE invoices 
+SET payment_total = invoice_total * 0.5, 
+	payment_date = due_date
+WHERE invoice_id = 3; */
+-- DELETE Rows
+-- DELETE FROM invoices 
+-- WHERE client_id = (
+-- 				SELECT *
+-- 				FROM clients
+-- 				WHERE name = 'Myworks'
+--                 );
+
+
