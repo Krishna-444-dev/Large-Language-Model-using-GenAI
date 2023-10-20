@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LLM GPT Creator</h1>
+    </header>
+    <input type="text" id="inputText">
+    <button onclick="generateResponse()">Generate Response</button>
+    <p id="response"></p>
+
+    <script>
+        function generateResponse() {
+            var inputText = document.getElementById("inputText").value;
+
+            fetch('/generate_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").textContent = data.response;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
