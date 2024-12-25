@@ -24,7 +24,7 @@ Flask (pip install flask)
 
 # Installation
 Clone the repository:
-git clone https://github.com/Krishna-444-dev/cusLLM.git
+git clone https://github.com/Krishna-444-dev/Large-Language-Model-using-GenAI.git
 
 Navigate to the project directory:
 cd llm-gpt-creator
